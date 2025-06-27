@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether the rule is currently active.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Only active rules will be evaluated during record updates.</inlineHelpText>
+    <label>Active</label>
+    <type>Checkbox</type>
+</CustomField>
