@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>After_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the trigger handler should execute during the After Update event.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select this option to run the handler after existing records are updated in the database. Use this for logic that relies on committed changes, updating related records, or sending notifications.</inlineHelpText>
+    <label>After Update</label>
+    <type>Checkbox</type>
+</CustomField>

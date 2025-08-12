@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>After_Undelete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the trigger handler should execute during the After Undelete event.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select this option to run the handler after records are restored from the Recycle Bin. Use this for logic such as re-establishing relationships, recalculating data, or restoring related records.</inlineHelpText>
+    <label>After Undelete</label>
+    <type>Checkbox</type>
+</CustomField>

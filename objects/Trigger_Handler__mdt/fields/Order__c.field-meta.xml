@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order__c</fullName>
+    <description>Determines the sequence in which handlers will be executed, ensuring that each handler is triggered in the appropriate order to meet the specific requirements. This enables meticulous control over the flow of operations, facilitating seamless execution of complex workflows and business logic.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Order in which the handlers are going to run.</inlineHelpText>
+    <label>Order</label>
+    <precision>6</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

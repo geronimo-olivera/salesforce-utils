@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If set to true, the handler will be invoked from the trigger, enabling the execution of predefined actions and logic associated with a specific trigger event. This configuration ensures that the designated handler class is triggered as intended, facilitating seamless integration and automation of processes.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>If true then the handler will be called from trigger.</inlineHelpText>
+    <label>Is Active</label>
+    <type>Checkbox</type>
+</CustomField>

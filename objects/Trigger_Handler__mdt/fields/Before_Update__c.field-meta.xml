@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Before_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the trigger handler should execute during the Before Update event.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select this option to run the handler before existing records are updated in the database. Use this for logic such as validation, recalculation of fields, or preparing data before the update.</inlineHelpText>
+    <label>Before Update</label>
+    <type>Checkbox</type>
+</CustomField>

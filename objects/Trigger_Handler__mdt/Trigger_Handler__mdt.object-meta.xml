@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Defines trigger handlers that execute specific actions for SObjects. These trigger handlers are designed to enhance customization and efficiency by ensuring that each record is processed through its corresponding class, facilitating streamlined and organized execution of business logic.</description>
+    <label>Trigger Handler</label>
+    <pluralLabel>Trigger Handlers</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

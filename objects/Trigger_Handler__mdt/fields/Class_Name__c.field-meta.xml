@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Name__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Specifies the name of the trigger handler class that will be executed, orchestrating the actions and logic associated with a particular trigger event within. This designation ensures that the correct class is invoked to manage the behavior and processing of records, maintaining consistency and scalability in application development.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Name of the trigger handler class to run.</inlineHelpText>
+    <label>Class Name</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

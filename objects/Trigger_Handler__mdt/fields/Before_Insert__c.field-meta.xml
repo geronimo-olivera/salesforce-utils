@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Before_Insert__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the trigger handler should execute during the Before Insert event.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Select this option to run the handler before new records are inserted into the database. Use this for logic such as validation, default value setting, or data transformation before saving.</inlineHelpText>
+    <label>Before Insert</label>
+    <type>Checkbox</type>
+</CustomField>
