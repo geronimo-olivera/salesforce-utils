@@ -58,7 +58,7 @@ public without sharing class AutoDateRuleHandler {
      * @param newList The list of records from Trigger.new.
      * @param oldMap The map of old records from Trigger.oldMap (only used on update).
      */
-    private static void applyAutoDateRules(String objectApiName, List<SObject> newList, Map<Id, SObject> oldMap) {
+    public static void applyAutoDateRules(String objectApiName, List<SObject> newList, Map<Id, SObject> oldMap) {
         Map<String, List<Auto_Date_Rule__mdt>> autoDateRulesByObjectName = getAutoDateRulesByObjectName();
         if (autoDateRulesByObjectName == null || autoDateRulesByObjectName.isEmpty()) return;
         if (autoDateRulesByObjectName.containsKey(objectApiName)) {
