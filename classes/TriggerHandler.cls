@@ -3,7 +3,7 @@
  * Description :	Base abstract class for all trigger handlers, providing default hook methods for each trigger event.
  *                  Subclasses can override only the methods they need, keeping trigger logic clean and reusable.
  **/
-public abstract class TriggerHandler implements TriggerHandlerInterface {
+public abstract inherited sharing class TriggerHandler implements TriggerHandlerInterface {
     /**
      * Executes the appropriate hook method based on the current trigger operation.
      */

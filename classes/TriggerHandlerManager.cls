@@ -2,26 +2,42 @@
  * File Name   :	TriggerHandlerManager.cls
  * Description :	Manager for selecting and executing the appropriate trigger handlers.
  **/
-public class TriggerHandlerManager {
+public inherited sharing class TriggerHandlerManager {
+
+    private static Map<String, Set<Id>> processedIdsByHandler = new Map<String, Set<Id>>();
+
     /**
      * Method responsible for handling trigger execution logic.
      * @param objectName the api name of the SObject.
      */
     public static void handle(String objectName) {
         if(String.isBlank(objectName)) { return; }
-        try {
-            List<Trigger_Handler__mdt> triggerHandlers = Test.isRunningTest() ? getMockDataTriggerHandler() : getTriggerHandlersByObjectName(objectName);
-            if (triggerHandlers.isEmpty()) { return; }
-            for (Trigger_Handler__mdt handler : triggerHandlers) {
-                if (!matchesCurrentContext(handler)) { continue; }
-                Type classType = Type.forName(handler.Class_Name__c);
-                if(classType == null) { continue;}
-                TriggerHandlerInterface handlerInterface = (TriggerHandlerInterface) classType.newInstance();
-                if (handlerInterface == null) { continue; }
-                handlerInterface.execute();
+        List<Trigger_Handler__mdt> triggerHandlers = Test.isRunningTest() ? getMockDataTriggerHandler() : getTriggerHandlersByObjectName(objectName);
+        if (triggerHandlers.isEmpty()) { return; }
+        for (Trigger_Handler__mdt handler : triggerHandlers) {
+            if (!matchesCurrentContext(handler)) { continue; }
+            String handlerKey = handler.Class_Name__c + ':' + Trigger.operationType;
+            Set<Id> currentIds = getCurrentContextRecordIds();
+            if (currentIds != null) {
+                Set<Id> processedIds = processedIdsByHandler.get(handlerKey);
+                if (processedIds != null && processedIds.containsAll(currentIds)) { continue; }
+                if (processedIds == null) {
+                    processedIds = new Set<Id>();
+                    processedIdsByHandler.put(handlerKey, processedIds);
+                }
+                processedIds.addAll(currentIds);
             }
-        } catch (Exception ex) {
-            System.debug('Error Message: ' + ex.getMessage()+ ' \n' + 'StackTrace: ' + ex.getStackTraceString());
+            Type classType = Type.forName(handler.Class_Name__c);
+            if(classType == null) { 
+                System.debug(LoggingLevel.WARN, 'Trigger_Handler__mdt references unknown Apex class: ' + handler.Class_Name__c);
+                continue;
+            }
+            Object instance = classType.newInstance();
+            if (!(instance instanceof TriggerHandlerInterface)) {
+                System.debug(LoggingLevel.WARN, handler.Class_Name__c + ' does not implement TriggerHandlerInterface.');
+                continue;
+            }
+            ((TriggerHandlerInterface) instance).execute();
         }
     }
 
@@ -32,14 +48,17 @@ public class TriggerHandlerManager {
      */
     private static List<Trigger_Handler__mdt> getTriggerHandlersByObjectName(String objectName) {
         return [
-            SELECT Class_Name__c,
+            SELECT After_Delete__c,
+            	After_Insert__c,
+            	After_Undelete__c,
+            	After_Update__c,
+            	Before_Delete__c,
             	Before_Insert__c,
             	Before_Update__c,
-            	Before_Delete__c,
-            	After_Insert__c,
-            	After_Update__c,
-            	After_Delete__c,
-            	After_Undelete__c
+                Class_Name__c,
+                Is_Active__c, 
+                Object__c, 
+                Order__c
             FROM Trigger_Handler__mdt 
             WHERE Is_Active__c = TRUE 
             AND Object__c = :objectName 
@@ -52,14 +71,21 @@ public class TriggerHandlerManager {
      * @return a List with the Trigger Handlers records for testing purposes.
      */
     private static List<Trigger_Handler__mdt> getMockDataTriggerHandler() {
-        return new List<Trigger_Handler__mdt>{ 
+        return new List<Trigger_Handler__mdt>{
             new Trigger_Handler__mdt(
-                MasterLabel = 'Test Handler', 
-                Class_Name__c = 'MockTriggerHandler', 
-                Is_Active__c = true, 
-                Object__c = 'Account', 
-                Order__c = 1
-            ) 
+                MasterLabel = 'Test Handler',
+                Class_Name__c = 'MockTriggerHandler',
+                Is_Active__c = true,
+                Object__c = 'Account',
+                Order__c = 1,
+                Before_Insert__c = true,
+                After_Insert__c = true,
+                Before_Update__c = true,
+                After_Update__c = true,
+                Before_Delete__c = true,
+                After_Delete__c = true,
+                After_Undelete__c = true
+            )
         };
     }
 
@@ -80,5 +106,16 @@ public class TriggerHandlerManager {
             when AFTER_UNDELETE { return triggerHandler.After_Undelete__c; }
         }
         return false;
+    }
+
+    /**
+     * Retrieves the Ids of the records in the current trigger context, when available.
+     * @return the Ids from Trigger.newMap or Trigger.oldMap, or null when the current context
+     * has no records with an assigned Id yet (e.g. before insert).
+     */
+    private static Set<Id> getCurrentContextRecordIds() {
+        if (Trigger.newMap != null) { return Trigger.newMap.keySet(); }
+        if (Trigger.oldMap != null) { return Trigger.oldMap.keySet(); }
+        return null;
     }
 }
