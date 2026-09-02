@@ -13,11 +13,19 @@ Standalone repo with the full project scaffold (deployable manifest, generated d
 
 ## Contents
 
-- `classes/TriggerHandler.cls` — abstract base class with a hook per trigger event (`beforeInsert`, `afterUpdate`, etc.), all empty by default so a subclass only overrides what it needs.
-- `classes/TriggerHandlerInterface.cls` — contract implemented by every handler.
-- `classes/TriggerHandlerManager.cls` — looks up active handlers for an object/event from `Trigger_Handler__mdt`, applies the recursion guard, and dispatches to them.
-- `classes/MockTriggerHandler.cls` — test-only handler used by `TriggerHandlerManagerTest`.
-- `objects/Trigger_Handler__mdt/` — custom metadata type that configures which handler classes run for which object/event.
+- `force-app/main/default/classes/TriggerHandler.cls` — abstract base class with a hook per trigger event (`beforeInsert`, `afterUpdate`, etc.), all empty by default so a subclass only overrides what it needs.
+- `force-app/main/default/classes/TriggerHandlerInterface.cls` — contract implemented by every handler.
+- `force-app/main/default/classes/TriggerHandlerManager.cls` — looks up active handlers for an object/event from `Trigger_Handler__mdt`, applies the recursion guard, and dispatches to them.
+- `force-app/main/default/classes/MockTriggerHandler.cls` — test-only handler used by `TriggerHandlerManagerTest`.
+- `force-app/main/default/objects/Trigger_Handler__mdt/` — custom metadata type that configures which handler classes run for which object/event.
+
+## Deploy to an org
+
+You need [VS Code with the Salesforce Extension Pack](https://developer.salesforce.com/tools/vscode/) and an authenticated org.
+
+1. Clone this repo and open it in VS Code.
+2. Authenticate to your target org (`SFDX: Authorize an Org`, or `sf org login web` from the CLI).
+3. Right-click [`manifest/package.xml`](../manifest/package.xml) and choose **SFDX: Deploy Source in Manifest to Org**.
 
 ## Custom metadata: `Trigger_Handler__mdt`
 

@@ -1,0 +1,12 @@
+# Salesforce cache/config (machine-specific, may reference local orgs)
+.sf/
+.sfdx/
+.localdevserver/
+
+# LWC/Aura compiled output
+**/lwc/**/__tests__/**/__snapshots__/
+
+# OS/editor
+.DS_Store
+.vscode/
+*.log
