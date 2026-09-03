@@ -6,6 +6,8 @@
         <members>HttpCalloutService</members>
         <members>HttpCalloutServiceTest</members>
         <members>MockTriggerHandler</members>
+        <members>NotificationService</members>
+        <members>NotificationServiceTest</members>
         <members>TriggerHandler</members>
         <members>TriggerHandlerInterface</members>
         <members>TriggerHandlerManager</members>

@@ -7,6 +7,7 @@ Personal collection of reusable Salesforce utilities, as a Salesforce DX project
 - **Trigger Handler Framework** — metadata-driven Apex trigger dispatch, with a built-in recursion guard. See [`docs/TriggerHandlerFramework.md`](docs/TriggerHandlerFramework.md) for how it works and how to use it. Standalone deployable project: [Trigger-Handler-Framework](https://github.com/geronimo-olivera/Trigger-Handler-Framework).
 - **HttpCalloutService** — centralized service for outbound HTTP callouts (GET/POST/PUT/PATCH/DELETE, JSON helpers, consistent error handling). See [`docs/HttpCalloutService.md`](docs/HttpCalloutService.md) for usage examples.
 - **EmailService** — centralized service for outbound emails (templated, ad-hoc, attachments, CC/BCC/reply-to, consistent error handling). See [`docs/EmailService.md`](docs/EmailService.md) for usage examples and how to configure its `Email_Service_Setting__mdt` default.
+- **NotificationService** — centralized service for custom notifications (the bell icon), with helpers to notify a record's followers, its owner, or explicit users, and consistent error handling. See [`docs/NotificationService.md`](docs/NotificationService.md) for usage examples and how to set up a Custom Notification Type.
 
 ## Deploy to an org
 
