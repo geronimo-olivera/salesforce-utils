@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Configuration used by EmailService.cls to resolve org-wide defaults for outbound emails. Only one record, with DeveloperName &quot;Default&quot;, is expected to exist.</description>
+    <label>Email Service Setting</label>
+    <pluralLabel>Email Service Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

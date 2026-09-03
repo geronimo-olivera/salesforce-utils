@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Org_Wide_Email_Address__c</fullName>
+    <description>The Address value of the Org-Wide Email Address that EmailService.getDefaultOrgWideEmailAddress() should apply when no explicit Org-Wide Email Address Id is provided. Must match the Address field on an existing OrgWideEmailAddress record exactly.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The email address of the default Org-Wide Email Address (must match an existing OrgWideEmailAddress record's Address field).</inlineHelpText>
+    <label>Default Org Wide Email Address</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
