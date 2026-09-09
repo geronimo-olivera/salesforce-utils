@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Defines a rule that blocks a field from changing to a specific value until its related conditions are met. Conditions are configured separately, in Transition_Condition__mdt.</description>
+    <label>Field Transition Rule</label>
+    <pluralLabel>Field Transition Rules</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Field_Transition_Blocked_Error</fullName>
+        <categories>FieldTransitionValidator</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error shown when FieldTransitionValidator blocks a field transition</shortDescription>
+        <value>Cannot set {0} to &quot;{1}&quot;: one or more requirements for this transition have not been met.</value>
+    </labels>
+    <labels>
+        <fullName>Field_Transition_Checklist_Title</fullName>
+        <categories>FieldTransitionChecklist</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Card title of the fieldTransitionChecklist LWC</shortDescription>
+        <value>Transition Checklist</value>
+    </labels>
+    <labels>
+        <fullName>Field_Transition_Checklist_Empty_State</fullName>
+        <categories>FieldTransitionChecklist</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Shown in the fieldTransitionChecklist LWC when no rule applies to the record</shortDescription>
+        <value>No configured transitions apply to this record.</value>
+    </labels>
+</CustomLabels>

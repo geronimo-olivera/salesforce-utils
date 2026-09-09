@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Child_Filter_Criteria__c</fullName>
+    <description>A SOQL WHERE-clause fragment evaluated against the child object. For Child Record Exists, passes if at least one match is found. For All Matching Children Satisfy, selects which children to check (blank selects every child of that type). For Parent Criteria If Child Exists, this is the triggering condition.</description>
+    <inlineHelpText>WHERE-clause fragment to match against the child object.</inlineHelpText>
+    <label>Child Filter Criteria</label>
+    <length>131072</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

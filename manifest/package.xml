@@ -3,6 +3,12 @@
     <types>
         <members>EmailService</members>
         <members>EmailServiceTest</members>
+        <members>FieldTransitionConditionEvaluator</members>
+        <members>FieldTransitionFrameworkTest</members>
+        <members>FieldTransitionMetadataService</members>
+        <members>FieldTransitionRequirementController</members>
+        <members>FieldTransitionRequirementService</members>
+        <members>FieldTransitionValidator</members>
         <members>HttpCalloutService</members>
         <members>HttpCalloutServiceTest</members>
         <members>MockTriggerHandler</members>
@@ -16,11 +22,15 @@
     </types>
     <types>
         <members>Email_Service_Setting__mdt</members>
+        <members>Field_Transition_Rule__mdt</members>
+        <members>Transition_Condition__mdt</members>
         <members>Trigger_Handler__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>Email_Service_Setting__mdt-Email Service Setting Layout</members>
+        <members>Field_Transition_Rule__mdt-Field Transition Rule Layout</members>
+        <members>Transition_Condition__mdt-Transition Condition Layout</members>
         <members>Trigger_Handler__mdt-Trigger Handler Layout</members>
         <name>Layout</name>
     </types>
@@ -28,5 +38,15 @@
         <members>Email_Service_Setting.Default</members>
         <name>CustomMetadata</name>
     </types>
-    <version>60.0</version>
+    <types>
+        <members>Field_Transition_Blocked_Error</members>
+        <members>Field_Transition_Checklist_Title</members>
+        <members>Field_Transition_Checklist_Empty_State</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>fieldTransitionChecklist</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>62.0</version>
 </Package>

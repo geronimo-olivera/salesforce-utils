@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title={label.checklistTitle} icon-name="utility:checkbox">
+        <lightning-button
+            slot="actions"
+            label="Refresh"
+            icon-name="utility:refresh"
+            onclick={handleRefresh}
+        ></lightning-button>
+
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+
+            <template if:true={showEmptyState}>
+                <p class="slds-text-color_weak">{label.emptyStateMessage}</p>
+            </template>
+
+            <template for:each={groups} for:item="group">
+                <div key={group.key} class="slds-m-bottom_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">
+                        {group.fieldLabel}
+                    </h3>
+
+                    <template for:each={group.transitions} for:item="transition">
+                        <div key={transition.key} class="slds-box slds-box_x-small slds-m-bottom_x-small">
+                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+                                <span class="slds-text-title_bold">{transition.fromValue} → {transition.toValue}</span>
+                                <lightning-icon icon-name={transition.statusIcon} variant={transition.statusVariant} size="x-small"></lightning-icon>
+                            </div>
+
+                            <ul class="slds-list_vertical slds-list_dotted">
+                                <template for:each={transition.conditions} for:item="condition">
+                                    <li key={condition.key} class="slds-grid slds-grid_vertical-align-center slds-p-vertical_xx-small">
+                                        <lightning-icon icon-name={condition.statusIcon} variant={condition.statusVariant} size="xx-small" class="slds-m-right_x-small"></lightning-icon>
+                                        <span>{condition.label}</span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

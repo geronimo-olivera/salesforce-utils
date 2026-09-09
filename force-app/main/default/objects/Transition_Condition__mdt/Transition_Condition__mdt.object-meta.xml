@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Defines one condition that must be met for its related Field_Transition_Rule__mdt to allow the transition. A rule can have multiple active conditions; all of them must pass. See Condition_Type__c for the kinds of check available.</description>
+    <label>Transition Condition</label>
+    <pluralLabel>Transition Conditions</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

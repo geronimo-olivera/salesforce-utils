@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Child_Required_Criteria__c</fullName>
+    <description>A SOQL WHERE-clause fragment that every child record selected by Child_Filter_Criteria__c must also match. Used only when Condition_Type__c is All Matching Children Satisfy.</description>
+    <inlineHelpText>WHERE-clause fragment every selected child record must satisfy.</inlineHelpText>
+    <label>Child Required Criteria</label>
+    <length>131072</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

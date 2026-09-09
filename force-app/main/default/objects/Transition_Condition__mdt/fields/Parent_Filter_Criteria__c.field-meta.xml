@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Filter_Criteria__c</fullName>
+    <description>A single Field Operator Value comparison evaluated against the parent record's current in-memory values. Supports =, !=, &gt;, &gt;=, &lt;, &lt;=, LIKE, IN, NOT IN, and, for multi-select picklists, INCLUDES/EXCLUDES. Text values use single quotes; dates use YYYY-MM-DD or a SOQL date literal (TODAY, THIS_WEEK, LAST_N_DAYS:30, etc — fiscal-year literals aren't supported). A literal date/time without a trailing Z is interpreted in the timezone of whoever saves the record; add Z (e.g. 2026-01-01T09:00:00Z) for an exact UTC instant. Don't combine multiple comparisons here with AND/OR — add another condition record instead. Used when Condition_Type__c is Parent Field Criteria or Parent Criteria If Child Exists.</description>
+    <inlineHelpText>A single comparison against the parent record (=, !=, &gt;, &gt;=, &lt;, &lt;=, LIKE, IN, NOT IN, INCLUDES, EXCLUDES). Text values use single quotes; dates accept SOQL date literals like TODAY. Add a trailing Z to a date/time literal for an exact UTC instant — otherwise it's interpreted in the saving user's timezone. Don't combine conditions with AND/OR here — add another condition record instead.</inlineHelpText>
+    <label>Parent Filter Criteria</label>
+    <length>131072</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
