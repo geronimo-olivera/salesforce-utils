@@ -9,6 +9,7 @@ Personal collection of reusable Salesforce utilities, as a Salesforce DX project
 - **HttpCalloutService** — centralized service for outbound HTTP callouts (GET/POST/PUT/PATCH/DELETE, JSON helpers, consistent error handling). See [`docs/HttpCalloutService.md`](docs/HttpCalloutService.md) for usage examples.
 - **EmailService** — centralized service for outbound emails (templated, ad-hoc, attachments, CC/BCC/reply-to, consistent error handling). See [`docs/EmailService.md`](docs/EmailService.md) for usage examples and how to configure its `Email_Service_Setting__mdt` default.
 - **NotificationService** — centralized service for custom notifications (the bell icon), with helpers to notify a record's followers, its owner, or explicit users, and consistent error handling. See [`docs/NotificationService.md`](docs/NotificationService.md) for usage examples and how to set up a Custom Notification Type.
+- **Async Apex Framework** — metadata-driven base classes for Batch and Queueable Apex (active flag, retry, batch size, failure email, all via `Async_Job_Configuration__mdt`), with retry/completion logic that's deliberately different between the two. See [`docs/AsyncApexFramework.md`](docs/AsyncApexFramework.md) for easy and advanced examples for both, and why they retry differently. Standalone deployable project: [Async-Apex-Framework](https://github.com/geronimo-olivera/Async-Apex-Framework).
 
 ## Deploy to an org
 
