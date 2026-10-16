@@ -7,6 +7,8 @@
         <members>BatchApexHandler</members>
         <members>BatchApexHandlerTest</members>
         <members>BatchApexHandlerTestBatch</members>
+        <members>CollectionUtils</members>
+        <members>CollectionUtilsTest</members>
         <members>EmailService</members>
         <members>EmailServiceTest</members>
         <members>FieldTransitionConditionEvaluator</members>
